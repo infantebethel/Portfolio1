@@ -147,8 +147,24 @@ h2 { margin-bottom: .75rem; }
 .hero, .page-hero { text-align: center; padding: 3rem 0 2rem; }
 .avatar-wrap { position: relative; width: 150px; height: 150px; margin: 0 auto 1.5rem; }
 .lanyard-mount { width: min(100%, 600px); height: 800px; margin: 0 auto .5rem; }
+.lanyard-fallback { display: block; width: min(220px, 70%); height: min(520px, 70%); margin: 0 auto; object-fit: contain; }
 .hero .lanyard-mount { margin-top: -10.25rem; margin-bottom: 10.75rem; }
 .lanyard-mount .lanyard { touch-action: none; }
+.profile-card-fallback {
+  display: grid;
+  justify-items: center;
+  gap: .75rem;
+  width: min(340px, 100%);
+  margin: 0 auto 2rem;
+  padding: .75rem;
+  border: 1px solid var(--border);
+  border-radius: 1.6rem;
+  background: var(--card);
+  color: var(--fg);
+  text-align: center;
+}
+.profile-card-fallback img { display: block; width: 100%; max-height: 420px; border-radius: 1.1rem; object-fit: cover; }
+.profile-card-fallback p { color: var(--muted); font-size: .9rem; }
 .ring {
   position: absolute; inset: 0; border-radius: 50%;
   background: conic-gradient(var(--primary), var(--accent), var(--primary));

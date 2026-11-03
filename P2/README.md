@@ -15,6 +15,8 @@ Use the navigation links to open Home, Personal, Achievements, and Parents. The 
 
 In VS Code, choose **Terminal → Run Task → Run P2 portfolio** to start it from the correct folder. Do not use **Live Server** or open the HTML files directly: those do not compile the React JSX modules, so the lanyard and profile card will be blank.
 
+The interactive lanyard and profile card need JavaScript and WebGL, so they do not appear inside search-result previews. Search engines may take time to index the site; submit `https://www.magpaliwintonia.devs.surf/sitemap.xml` in Google Search Console or the equivalent search-engine webmaster tools to request crawling. A search result links visitors to the live interactive pages.
+
 To create a static production site, run `npm run build` and publish the contents of `dist`.
 
 ## Publishing with GitHub Pages
