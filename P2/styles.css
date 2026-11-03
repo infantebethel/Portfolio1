@@ -14,17 +14,17 @@ html.dark {
   --nebula-haze: rgb(126 40 255 / 24%);
 }
 html.light {
-  --bg: oklch(0.98 0.01 var(--hue));
+  --bg: oklch(0.96 0.01 var(--hue));
   --fg: oklch(0.2 0.03 var(--hue));
   --muted: oklch(0.45 0.03 var(--hue));
   --card: oklch(1 0 0 / 0.7);
   --border: oklch(0 0 0 / 0.08);
-  --nebula-space: #fbfaff;
-  --nebula-center: rgb(195 143 255 / 20%);
-  --nebula-blue: rgb(125 148 255 / 10%);
-  --nebula-purple: rgb(222 158 255 / 14%);
+  --nebula-space: #f1edf8;
+  --nebula-center: rgb(195 143 255 / 24%);
+  --nebula-blue: rgb(125 148 255 / 12%);
+  --nebula-purple: rgb(222 158 255 / 16%);
   --nebula-glow: rgb(255 255 255 / 55%);
-  --nebula-haze: rgb(183 133 255 / 9%);
+  --nebula-haze: rgb(183 133 255 / 11%);
 }
 :root {
   --primary: oklch(0.68 0.2 var(--hue));
