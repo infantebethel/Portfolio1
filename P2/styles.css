@@ -20,11 +20,11 @@ html.light {
   --card: oklch(1 0 0 / 0.7);
   --border: oklch(0 0 0 / 0.08);
   --nebula-space: #f1edf8;
-  --nebula-center: rgb(123 65 190 / 30%);
-  --nebula-blue: rgb(74 92 190 / 18%);
-  --nebula-purple: rgb(160 75 180 / 22%);
-  --nebula-glow: rgb(255 255 255 / 32%);
-  --nebula-haze: rgb(120 65 155 / 16%);
+  --nebula-center: rgb(91 38 155 / 38%);
+  --nebula-blue: rgb(54 67 145 / 24%);
+  --nebula-purple: rgb(128 45 150 / 30%);
+  --nebula-glow: rgb(255 255 255 / 18%);
+  --nebula-haze: rgb(85 40 125 / 23%);
 }
 :root {
   --primary: oklch(0.68 0.2 var(--hue));
