@@ -1,0 +1,24 @@
+.lanyard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.lanyard-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.lanyard-error {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  background: var(--card);
+  color: var(--muted);
+  text-align: center;
+}

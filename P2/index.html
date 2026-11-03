@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | Magpali, Wintonia Nazarene M.</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="./script.js"></script>
+  <script type="module" src="./src/lanyard-entry.jsx"></script>
+</head>
+<body>
+  <div class="aurora"><span></span><span></span><span></span></div>
+  <header class="header glass">
+    <a class="logo" href="index.html"><span class="logo-badge"><img src="profile-logo.png" alt="Profile picture" /></span> Magpali, Wintonia Nazarene M.</a>
+    <nav class="nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="personal.html">Personal</a>
+      <a href="achievements.html">Achievements</a>
+      <a href="parents.html">Parents</a>
+    </nav>
+    <div class="controls">
+      <div class="palette">
+        <button class="icon-btn" id="paletteBtn" aria-label="Change colour">
+          <svg class="theme-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 3a9 9 0 1 0 0 18h1.2a2 2 0 0 0 1.4-3.4 1.5 1.5 0 0 1 1.1-2.6H18a3 3 0 0 0 3-3c0-5-4-9-9-9Z"></path>
+            <circle cx="7.5" cy="10" r=".8"></circle><circle cx="11" cy="7" r=".8"></circle>
+            <circle cx="15.5" cy="8" r=".8"></circle>
+          </svg>
+        </button>
+        <div class="palette-menu glass" id="paletteMenu">
+          <p>Accent colour</p>
+          <div class="swatches">
+            <button data-hue="290" style="--h:290" title="Violet"></button>
+            <button data-hue="0" style="--h:0" title="Rose"></button>
+            <button data-hue="45" style="--h:45" title="Sunset"></button>
+            <button data-hue="130" style="--h:130" title="Lime"></button>
+            <button data-hue="250" style="--h:250" title="Ocean"></button>
+            <button data-hue="190" style="--h:190" title="Aqua"></button>
+          </div>
+          <input type="range" id="hueSlider" min="0" max="360" value="290" aria-label="Custom colour" />
+        </div>
+      </div>
+      <button class="icon-btn" id="modeBtn" type="button" aria-label="Switch to light mode">
+        <svg class="theme-icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+        </svg>
+        <svg class="theme-icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+  <main class="page-enter">
+    <section class="hero">
+      <div id="lanyard-root" class="lanyard-mount" data-extend-above role="img" aria-label="Interactive 3D profile lanyard"></div>
+      <p class="eyebrow reveal">Welcome to my portfolio</p>
+      <h1 class="title text-gradient reveal">Wintonia Magpali</h1>
+      <p class="tagline reveal">Dreamer · Learner · Creator</p>
+      <p class="lead reveal">Hi! I am a curious student who loves learning new things, creating, and growing a little more every day. Welcome to my corner of the internet.</p>
+      <div class="buttons reveal">
+        <a class="btn btn-primary" href="personal.html">Get to know me</a>
+        <a class="btn btn-ghost" href="achievements.html">See achievements</a>
+      </div>
+      <nav class="social-links reveal" aria-label="Social media profiles">
+        <a href="https://github.com/nazarocode" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 .9a11.1 11.1 0 0 0-3.5 21.6c.6.1.8-.2.8-.6v-2.1c-3.1.7-3.8-1.3-3.8-1.3-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.7 2.4 3.8 1.7.1-.7.4-1.2.7-1.5-2.5-.3-5.1-1.2-5.1-5.5 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.4.1-2.9 0 0 .9-.3 3.1 1.1a10.7 10.7 0 0 1 5.7 0c2.2-1.4 3.1-1.1 3.1-1.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.8 1.1 3 0 4.3-2.6 5.2-5.1 5.5.4.4.8 1 .8 2v3c0 .4.2.7.8.6A11.1 11.1 0 0 0 12 .9Z"></path></svg>
+        </a>
+        <a href="https://www.instagram.com/yzunzr?xtok=Njd2c2JnNHEzdDJm" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle class="social-icon-fill" cx="18" cy="6.5" r="1"></circle></svg>
+        </a>
+        <a href="https://www.facebook.com/share/1FbaTZ71V6/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="social-icon-fill" d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.3v3h2.8v8h3.4Z"></path></svg>
+        </a>
+        <a href="https://www.tiktok.com/@yuzu.codm?_r=1" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16.6 3c.3 2.1 1.5 3.4 3.5 3.5v3.2a8.6 8.6 0 0 1-3.5-.9v6.5a6.1 6.1 0 1 1-6.1-6.1c.4 0 .8 0 1.2.1v3.4a2.8 2.8 0 1 0 1.7 2.6V3h3.2Z"></path></svg>
+        </a>
+      </nav>
+    </section>
+    <section class="stats">
+      <div class="stat glass lift reveal"><strong>5</strong><span>Recognitions</span></div>
+      <div class="stat glass lift reveal" style="--delay:.1s"><strong>5</strong><span>Activities</span></div>
+      <div class="stat glass lift reveal" style="--delay:.2s"><strong>∞</strong><span>Things left to learn</span></div>
+    </section>
+    <div class="marquee"><div class="marquee-track">
+      <span>Leadership</span><span>Public speaking</span><span>Teamwork</span><span>Creativity</span><span>Problem solving</span><span>Time management</span>
+      <span>Leadership</span><span>Public speaking</span><span>Teamwork</span><span>Creativity</span><span>Problem solving</span><span>Time management</span>
+    </div></div>
+    <section class="grid3">
+      <a class="card glass lift reveal" href="personal.html"><svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 21a7 7 0 0 1 14 0M12 2v2M4.9 4.9l1.4 1.4M2 12h2"></path></svg><h3>Personal</h3><p>My story, hobbies, and the things I love.</p></a>
+      <a class="card glass lift reveal" style="--delay:.1s" href="achievements.html"><svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 4h8v5a4 4 0 0 1-8 0V4ZM8 6H4v2a4 4 0 0 0 4 4m8-6h4v2a4 4 0 0 1-4 4m-4 1v5m-4 3h8m-7-3h6"></path></svg><h3>Achievements</h3><p>Awards and milestones I am proud of.</p></a>
+      <a class="card glass lift reveal" style="--delay:.2s" href="parents.html"><svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.8 8.7c0 4.2-8.8 10-8.8 10s-8.8-5.8-8.8-10A4.7 4.7 0 0 1 12 6a4.7 4.7 0 0 1 8.8 2.7Z"></path></svg><h3>Parents</h3><p>The two people who made it all possible.</p></a>
+    </section>
+  </main>
+  <footer class="footer">Made by Magpali, Wintonia Nazarene M. · Baguio City, Philippines</footer>
+</body>
+</html>

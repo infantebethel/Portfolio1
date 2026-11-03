@@ -1,0 +1,153 @@
+.father-card-root {
+  display: grid;
+  min-width: 0;
+  justify-items: center;
+  perspective: 1200px;
+}
+
+.father-flip-card-wrap {
+  width: min(100%, 440px);
+}
+
+.father-flip-card {
+  --father-radius: 1.5rem;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  height: auto;
+  padding: 0;
+  border: 0;
+  border-radius: var(--father-radius);
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  perspective: 1200px;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.father-flip-card:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 5px;
+}
+
+.father-flip-card__inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid oklch(1 0 0 / 0.18);
+  border-radius: var(--father-radius);
+  box-shadow: 0 24px 70px oklch(0.12 0.04 var(--hue) / 0.5), 0 0 32px var(--soft);
+  transform-style: preserve-3d;
+  transition: transform 650ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.father-flip-card.is-flipped .father-flip-card__inner {
+  transform: rotateY(180deg);
+}
+
+.father-flip-card__face {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  border-radius: inherit;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background: #17131f;
+  isolation: isolate;
+}
+
+.father-flip-card__face > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 650ms ease;
+}
+
+.father-flip-card:hover .father-flip-card__front > img {
+  transform: scale(1.035);
+}
+
+.father-flip-card__front > img {
+  object-position: 50% 45%;
+}
+
+.father-flip-card__back {
+  transform: rotateY(180deg);
+}
+
+.father-flip-card__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(15 8 24 / 0.02) 25%, rgb(15 8 24 / 0.85) 100%);
+}
+
+.father-flip-card__back .father-flip-card__scrim {
+  background: linear-gradient(180deg, rgb(15 8 24 / 0.12), rgb(15 8 24 / 0.88));
+}
+
+.father-flip-card__front-copy,
+.father-flip-card__back-copy {
+  position: absolute;
+  right: 1.4rem;
+  bottom: 1.5rem;
+  left: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+  text-shadow: 0 2px 18px rgb(0 0 0 / 0.65);
+}
+
+.father-flip-card__eyebrow {
+  color: rgb(255 255 255 / 0.82);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+}
+
+.father-flip-card__name {
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.father-flip-card__role {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.father-flip-card__message,
+.father-flip-card__quote {
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.father-flip-card__quote {
+  margin-top: 0.1rem;
+  font-style: italic;
+}
+
+.father-flip-card__hint {
+  margin-top: 0.3rem;
+  color: rgb(255 255 255 / 0.72);
+  font-size: 0.72rem;
+}
+
+@media (max-width: 640px) {
+  .father-flip-card__front-copy,
+  .father-flip-card__back-copy { right: 1rem; bottom: 1.1rem; left: 1rem; }
+  .father-flip-card__name { font-size: 1.55rem; }
+  .father-flip-card__message,
+  .father-flip-card__quote { font-size: 0.82rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .father-flip-card__inner,
+  .father-flip-card__face > img { transition: none; }
+}

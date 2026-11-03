@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal | Magpali, Wintonia Nazarene M.</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="./script.js"></script>
+  <script type="module" src="./src/profile-card-entry.jsx"></script>
+</head>
+<body>
+  <div class="aurora"><span></span><span></span><span></span></div>
+  <header class="header glass">
+    <a class="logo" href="index.html"><span class="logo-badge"><img src="profile-logo.png" alt="" /></span> Magpali, Wintonia Nazarene M.</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="personal.html" class="active">Personal</a>
+      <a href="achievements.html">Achievements</a>
+      <a href="parents.html">Parents</a>
+    </nav>
+    <div class="controls">
+      <div class="palette">
+        <button class="icon-btn" id="paletteBtn" aria-label="Change colour">
+          <svg class="theme-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 3a9 9 0 1 0 0 18h1.2a2 2 0 0 0 1.4-3.4 1.5 1.5 0 0 1 1.1-2.6H18a3 3 0 0 0 3-3c0-5-4-9-9-9Z"></path>
+            <circle cx="7.5" cy="10" r=".8"></circle><circle cx="11" cy="7" r=".8"></circle>
+            <circle cx="15.5" cy="8" r=".8"></circle>
+          </svg>
+        </button>
+        <div class="palette-menu glass" id="paletteMenu">
+          <p>Accent colour</p>
+          <div class="swatches">
+            <button data-hue="290" style="--h:290" title="Violet"></button>
+            <button data-hue="0" style="--h:0" title="Rose"></button>
+            <button data-hue="45" style="--h:45" title="Sunset"></button>
+            <button data-hue="130" style="--h:130" title="Lime"></button>
+            <button data-hue="250" style="--h:250" title="Ocean"></button>
+            <button data-hue="190" style="--h:190" title="Aqua"></button>
+          </div>
+          <input type="range" id="hueSlider" min="0" max="360" value="290" aria-label="Custom colour" />
+        </div>
+      </div>
+      <button class="icon-btn" id="modeBtn" type="button" aria-label="Switch to light mode">
+        <svg class="theme-icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+        </svg>
+        <svg class="theme-icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+  <main class="page-enter">
+    <section class="page-hero">
+      <div id="profile-card-root"></div>
+      <p class="eyebrow">Personal</p>
+      <h1 class="title text-gradient">About Me</h1>
+      <p class="lead">Who I am, what I love, and what I dream about.</p>
+    </section>
+    <section class="two-col">
+      <div class="card glass reveal">
+        <h2>My story</h2>
+        <p>I am a hardworking and friendly person who believes every day is a chance to learn something new. I enjoy school, especially subjects that let me be creative and think deeply.</p>
+        <p>Outside of class, you can find me reading, watching movies, listening to music, or spending time with my family and friends. I like trying new hobbies and sharing what I learn with others.</p>
+      </div>
+      <div class="card glass reveal" style="--delay:.1s">
+        <h2>Quick facts</h2>
+        <dl class="facts">
+          <dt>Full name</dt><dd>Magpali, Wintonia Nazarene M.</dd>
+          <dt>Birthday</dt><dd>January 1, 2008</dd>
+          <dt>Address</dt><dd>Kisad rd. Baguio City, Philippines</dd>
+          <dt>Favourite colour</dt><dd>Black, White, Purple, and any Dark Colours</dd>
+          <dt>Favourite food</dt><dd>Sweet & Sour Fish, Adubo, and Black Beans with Fork</dd>
+          <dt>Motto</dt><dd>“Dream big, work hard, stay kind, and never ever be late”</dd>
+        </dl>
+      </div>
+    </section>
+    <h2 class="section-title reveal">Hobbies</h2>
+    <section class="grid4">
+      <div class="card glass lift reveal"><svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5.5A3.5 3.5 0 0 1 7.5 2H20v17H7.5A3.5 3.5 0 0 0 4 22V5.5ZM4 18.5A3.5 3.5 0 0 1 7.5 15H20M8 6h8m-8 4h8"></path></svg><h3>Reading</h3><p>Stories, comics, and anything that makes me think.</p></div>
+      <div class="card glass lift reveal" style="--delay:.1s"><svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m10 9 5 3-5 3V9Z"></path></svg><h3>Watching</h3><p>Movies, shows, videos I enjoy in my free time, and watching on YouTube how to do in programming.</p></div>
+      <div class="card glass lift reveal" style="--delay:.2s"><svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18V5l12-2v13M9 18a3 3 0 1 1-3-3c1.7 0 3 1.3 3 3Zm12-2a3 3 0 1 1-3-3c1.7 0 3 1.3 3 3Z"></path></svg><h3>Music</h3><p>Listening to my favourite songs when I need to relax or focus.</p></div>
+      <div class="card glass lift reveal" style="--delay:.3s"><svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="13" rx="2"></rect><path d="M8 21h8m-4-4v4m-3-9 3-3 3 3"></path></svg><h3>Technology</h3><p>Learning how websites and apps are made — like this one!</p></div>
+    </section>
+    <h2 class="section-title reveal">Strengths</h2>
+    <div class="chips reveal">><span>Public speaking</span><span>Teamwork</span><span>Creativity</span><span>Problem solving</span><span>Time management</span></div>
+    <div class="card glass quote reveal"><h2>My dream</h2><p>My dream is to finish my studies, build a career I am proud of, and give back to my parents and my community, and be rich.</p></div>
+  </main>
+  <footer class="footer">Made by Magpali, Wintonia Nazarene M. · Baguio City, Philippines</footer>
+</body>
+</html>
