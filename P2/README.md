@@ -17,6 +17,14 @@ In VS Code, choose **Terminal → Run Task → Run P2 portfolio** to start it fr
 
 To create a static production site, run `npm run build` and publish the contents of `dist`.
 
+## Publishing with GitHub Pages
+
+The repository includes a GitHub Actions workflow that builds `P2` and deploys it to GitHub Pages whenever changes are pushed to `master`. The site URL is `https://nazarocode.github.io/Magpali-s-Portfolio/`.
+
+To enable it, open the repository's **Settings → Pages** and set the build and deployment source to **GitHub Actions**. The first deployment can also be started from the repository's **Actions** tab by running **Deploy P2 to GitHub Pages**. The repository must be public to use GitHub Pages on GitHub Free.
+
+The Vite build uses relative asset paths, so the portfolio works from the repository's `/Magpali-s-Portfolio/` path. GitHub Pages hosting provides the free `github.io` address; a custom subdomain still needs a working DNS CNAME record.
+
 ## Publishing with Cloudflare Pages
 
 Cloudflare Pages can build and deploy this Vite site directly from the GitHub repository:
@@ -24,7 +32,7 @@ Cloudflare Pages can build and deploy this Vite site directly from the GitHub re
 1. Sign in to Cloudflare and open **Workers & Pages → Create application → Pages → Connect to Git**. Authorize GitHub and select `nazarocode/Magpali-s-Portfolio`.
 2. Set the production branch to `main` or `master`, the root directory to `P2`, the build command to `npm run build`, and the build output directory to `dist`. No environment variables are required.
 3. Save and deploy. Cloudflare will provide a `*.pages.dev` address and automatically redeploy on pushes to the production branch.
-4. To use `www.wintoniamagpali.com`, add the domain to your Cloudflare account and open the Pages project's **Custom domains** settings. Add `www.wintoniamagpali.com` there and follow Cloudflare's DNS instructions. The domain must be active in Cloudflare; if it is registered elsewhere, Cloudflare will guide you through changing its nameservers.
-5. Wait for Cloudflare to verify DNS and provision HTTPS. If you also want the bare domain `wintoniamagpali.com`, add it as a separate custom domain and configure its redirect to `www` in Cloudflare.
+4. To use a custom subdomain such as `www.magpaliwintonia.devs.surf`, first create a CNAME record with your DNS provider, then add the full hostname in the Pages project's **Custom domains** settings and follow Cloudflare's verification steps.
+5. Wait for Cloudflare to verify DNS and provision HTTPS. DNS changes may take time to propagate.
 
 The Cloudflare account owner must authorize the GitHub connection and configure the domain. Do not share Cloudflare API tokens or account passwords in chat.
