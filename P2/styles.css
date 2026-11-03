@@ -19,12 +19,12 @@ html.light {
   --muted: oklch(0.45 0.03 var(--hue));
   --card: oklch(1 0 0 / 0.7);
   --border: oklch(0 0 0 / 0.08);
-  --nebula-space: #f5f0ff;
-  --nebula-center: rgb(195 143 255 / 38%);
-  --nebula-blue: rgb(125 148 255 / 22%);
-  --nebula-purple: rgb(222 158 255 / 30%);
-  --nebula-glow: rgb(255 255 255 / 72%);
-  --nebula-haze: rgb(183 133 255 / 20%);
+  --nebula-space: #fbfaff;
+  --nebula-center: rgb(195 143 255 / 20%);
+  --nebula-blue: rgb(125 148 255 / 10%);
+  --nebula-purple: rgb(222 158 255 / 14%);
+  --nebula-glow: rgb(255 255 255 / 55%);
+  --nebula-haze: rgb(183 133 255 / 9%);
 }
 :root {
   --primary: oklch(0.68 0.2 var(--hue));
