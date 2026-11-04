@@ -6,7 +6,7 @@ const birthdayPhoto = new URL('../friends-birthday.jpg', import.meta.url).href;
 const nightPhoto = new URL('../friends-night.jpg', import.meta.url).href;
 const trioPhoto = new URL('../friends-trio.jpg', import.meta.url).href;
 
-const FriendFlipCard = ({ frontPhoto, backPhoto, alt, message, backLabel }) => {
+const FriendFlipCard = ({ frontPhoto, backPhoto, alt, message, backLabel, frontLabel = 'MY CIRCLE', backTitle = 'My circle of friends' }) => {
   const [flipped, setFlipped] = useState(false);
 
   const updateTilt = event => {
@@ -50,7 +50,7 @@ const FriendFlipCard = ({ frontPhoto, backPhoto, alt, message, backLabel }) => {
               <span className="father-flip-card__scrim" />
               <span className="friend-memory-card__shine" aria-hidden="true" />
               <span className="father-flip-card__front-copy">
-                <span className="father-flip-card__eyebrow">MY CIRCLE</span>
+                <span className="father-flip-card__eyebrow">{frontLabel}</span>
                 <span className="father-flip-card__hint">Click or press Enter to see another memory</span>
               </span>
             </span>
@@ -60,7 +60,7 @@ const FriendFlipCard = ({ frontPhoto, backPhoto, alt, message, backLabel }) => {
               <span className="friend-memory-card__shine" aria-hidden="true" />
               <span className="father-flip-card__back-copy">
                 <span className="father-flip-card__eyebrow">FRIENDS</span>
-                <span className="father-flip-card__role">My circle of friends</span>
+                <span className="father-flip-card__role">{backTitle}</span>
                 <span className="father-flip-card__message">{message}</span>
                 <span className="father-flip-card__hint">Click or press Enter to see the photo</span>
               </span>
@@ -93,6 +93,8 @@ const FriendsCircle = () => (
         alt="Three friends celebrating their school achievements together"
         message="This is my trio of friends from Luciano Millan National High School (LMNHS) in Asingan, Pangasinan. I met them in Grade 10, after my father transferred me to LMNHS."
         backLabel="my trio of friends"
+        frontLabel="MY TRIO"
+        backTitle="MY TRIO"
       />
     </div>
   </section>
