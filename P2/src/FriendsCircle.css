@@ -1,0 +1,55 @@
+.friends-circle {
+  margin-top: clamp(3rem, 8vw, 6rem);
+}
+
+.friends-circle__heading {
+  max-width: 46rem;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.friends-circle__heading .lead {
+  margin: 0.75rem auto 0;
+}
+
+.friends-circle__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.friend-memory-card {
+  --pointer-x: 50%;
+  --pointer-y: 50%;
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  transform: rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  transition: transform 180ms ease-out;
+  will-change: transform;
+}
+
+.friend-memory-card.is-active {
+  z-index: 1;
+}
+
+.friend-memory-card__shine {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at var(--pointer-x) var(--pointer-y), rgb(255 255 255 / 0.4), transparent 38%),
+    linear-gradient(125deg, transparent 30%, rgb(210 160 255 / 0.16) 48%, transparent 65%);
+  mix-blend-mode: screen;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.friend-memory-card .father-flip-card__front-copy,
+.friend-memory-card .father-flip-card__back-copy {
+  z-index: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .friend-memory-card { transition: none; }
+}
