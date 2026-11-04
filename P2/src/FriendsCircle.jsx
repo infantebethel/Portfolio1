@@ -104,8 +104,7 @@ const FriendsCircle = () => (
         alt="Two friends posing together in Baguio City"
         message="These are some of my friends in Baguio City. I’m thankful for the fun moments and memories we share."
         backLabel="my friends in Baguio City"
-        frontLabel="BAGUIO CITY"
-        backEyebrow="MY CLASSMATES AND ALSO FRIENDS"
+        frontLabel="MY CLASSMATES AND ALSO FRIENDS"
         backTitle="My friends in Baguio City"
       />
     </div>
