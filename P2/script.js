@@ -1,4 +1,4 @@
-import { initBinaryOrbits } from './src/BinaryOrbits.js';
+import { initAeroShards } from './src/AeroShards.js';
 
 // Small helper for the theme buttons and scroll animations (HTML/CSS can't remember choices alone).
 (function () {
@@ -6,9 +6,11 @@ import { initBinaryOrbits } from './src/BinaryOrbits.js';
   var storageAvailable = true;
   var savedMode = 'dark';
   var savedHue = '290';
+  var savedLightModeTone = '18';
   try {
     savedMode = localStorage.getItem('mw-mode') || savedMode;
     savedHue = localStorage.getItem('mw-hue') || savedHue;
+    savedLightModeTone = localStorage.getItem('mw-light-background-shade') || savedLightModeTone;
   } catch (error) {
     storageAvailable = false;
     console.warn('Could not access localStorage; preferences will not persist.', error);
@@ -17,9 +19,14 @@ import { initBinaryOrbits } from './src/BinaryOrbits.js';
   var mode = savedMode === 'light' ? 'light' : 'dark';
   var parsedHue = Number(savedHue);
   var hue = Number.isFinite(parsedHue) && parsedHue >= 0 && parsedHue <= 360 ? parsedHue : 290;
+  var parsedLightModeTone = Number(savedLightModeTone);
+  var lightModeTone = Number.isFinite(parsedLightModeTone)
+    ? Math.min(40, Math.max(0, parsedLightModeTone))
+    : 18;
   html.classList.remove('dark', 'light');
   html.classList.add(mode);
   html.style.setProperty('--hue', hue);
+  html.style.setProperty('--light-mode-tone', lightModeTone + '%');
 
   function savePreference(key, value) {
     if (!storageAvailable) return;
@@ -32,7 +39,7 @@ import { initBinaryOrbits } from './src/BinaryOrbits.js';
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    initBinaryOrbits();
+    initAeroShards();
 
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       var cursorGlow = document.createElement('div');
@@ -72,8 +79,12 @@ import { initBinaryOrbits } from './src/BinaryOrbits.js';
     var paletteBtn = document.getElementById('paletteBtn');
     var menu = document.getElementById('paletteMenu');
     var slider = document.getElementById('hueSlider');
+    var lightModeToneSlider = document.getElementById('lightModeToneSlider');
+    var lightModeToneValue = document.getElementById('lightModeToneValue');
     modeBtn.setAttribute('aria-label', mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
     slider.value = hue;
+    lightModeToneSlider.value = lightModeTone;
+    lightModeToneValue.value = lightModeTone + '%';
 
     modeBtn.onclick = function () {
       mode = mode === 'dark' ? 'light' : 'dark';
@@ -91,6 +102,12 @@ import { initBinaryOrbits } from './src/BinaryOrbits.js';
     menu.onclick = function (e) { e.stopPropagation(); };
     document.onclick = function () { menu.classList.remove('open'); };
     slider.oninput = function () { setHue(slider.value); };
+    lightModeToneSlider.oninput = function () {
+      lightModeTone = Number(lightModeToneSlider.value);
+      html.style.setProperty('--light-mode-tone', lightModeTone + '%');
+      lightModeToneValue.value = lightModeTone + '%';
+      savePreference('mw-light-background-shade', lightModeTone);
+    };
     menu.querySelectorAll('[data-hue]').forEach(function (b) {
       b.onclick = function () { setHue(b.dataset.hue); };
     });

@@ -11,7 +11,7 @@ Alternatively:
 3. Run `npm start`.
 4. Vite opens the Home page at `http://127.0.0.1:5173/`.
 
-Use the navigation links to open Home, Personal, Achievements, and Parents. The Home page contains the interactive lanyard; Personal contains the interactive profile card.
+Use the navigation links to open Home, Personal Information, Achievements, and Family & Friends. The Home page contains the interactive lanyard; Personal Information contains the interactive profile card.
 
 In VS Code, choose **Terminal → Run Task → Run P2 portfolio** to start it from the correct folder. Do not use **Live Server** or open the HTML files directly: those do not compile the React JSX modules, so the lanyard and profile card will be blank.
 

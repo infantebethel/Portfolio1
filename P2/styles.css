@@ -14,17 +14,18 @@ html.dark {
   --nebula-haze: rgb(126 40 255 / 24%);
 }
 html.light {
-  --bg: oklch(0.96 0.01 var(--hue));
-  --fg: oklch(0.2 0.03 var(--hue));
-  --muted: oklch(0.45 0.03 var(--hue));
-  --card: oklch(1 0 0 / 0.7);
-  --border: oklch(0 0 0 / 0.08);
-  --nebula-space: #f1edf8;
-  --nebula-center: rgb(91 38 155 / 38%);
-  --nebula-blue: rgb(54 67 145 / 24%);
-  --nebula-purple: rgb(128 45 150 / 30%);
-  --nebula-glow: rgb(255 255 255 / 18%);
-  --nebula-haze: rgb(85 40 125 / 23%);
+  --light-mode-tone: 18%;
+  --bg: oklch(0.975 0.012 var(--hue));
+  --fg: oklch(0.22 0.025 var(--hue));
+  --muted: oklch(0.48 0.025 var(--hue));
+  --card: color-mix(in srgb, rgb(255 255 255 / 0.78), rgb(48 38 60 / 0.78) var(--light-mode-tone));
+  --border: oklch(0.45 0.04 var(--hue) / 0.12);
+  --nebula-space: oklch(0.985 0.008 var(--hue));
+  --nebula-center: oklch(0.84 0.055 var(--hue) / 0.34);
+  --nebula-blue: oklch(0.88 0.045 calc(var(--hue) + 115) / 0.24);
+  --nebula-purple: oklch(0.87 0.05 calc(var(--hue) + 45) / 0.22);
+  --nebula-glow: rgb(255 255 255 / 72%);
+  --nebula-haze: oklch(0.84 0.055 var(--hue) / 0.17);
 }
 :root {
   --primary: oklch(0.68 0.2 var(--hue));
@@ -42,31 +43,28 @@ body {
 a { color: inherit; text-decoration: none; }
 main { max-width: 1100px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
 
-/* ===== Original purple nebula background ===== */
+/* ===== Layered glass-shard background ===== */
 .aurora {
   position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
-  background:
-    radial-gradient(ellipse at 53% 35%, var(--nebula-center), transparent 34%),
-    radial-gradient(ellipse at 25% 58%, var(--nebula-blue), transparent 32%),
-    radial-gradient(ellipse at 75% 62%, var(--nebula-purple), transparent 38%),
-    var(--nebula-space);
+  background: var(--nebula-space);
 }
-.binary-orbits { position: absolute; inset: 0; width: 100%; height: 100%; }
+html.light .aurora::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: rgb(35 25 48 / var(--light-mode-tone));
+  pointer-events: none;
+  transition: background .25s ease;
+}
+.aero-shards { position: absolute; inset: 0; width: 100%; height: 100%; }
 .aurora::after {
   content: "";
   position: absolute;
   inset: -12%;
   z-index: 1;
   pointer-events: none;
-  background:
-    radial-gradient(ellipse at 52% 38%, var(--nebula-glow), transparent 23%),
-    radial-gradient(ellipse at 30% 56%, var(--nebula-haze), transparent 24%),
-    radial-gradient(ellipse at 74% 56%, var(--nebula-haze), transparent 28%);
-  filter: blur(28px);
-  animation: nebula-drift 32s ease-in-out infinite alternate;
-}
-@keyframes nebula-drift {
-  to { transform: translate3d(5%, -3%, 0) scale(1.12) rotate(2deg); }
+  background: radial-gradient(ellipse at 50% 50%, transparent 42%, var(--nebula-space) 115%);
 }
 main, .footer { position: relative; z-index: 1; }
 
@@ -127,6 +125,19 @@ html.dark .icon-sun, html.light .icon-moon { display: none; }
 }
 .swatches button:hover { transform: scale(1.2); }
 #hueSlider { width: 100%; accent-color: var(--primary); }
+.light-mode-control { margin-top: .75rem; }
+.light-mode-control__label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: .35rem;
+  color: var(--muted);
+  font-size: .85rem;
+}
+.light-mode-control output { color: var(--fg); font-variant-numeric: tabular-nums; }
+#lightModeToneSlider { width: 100%; accent-color: var(--primary); }
+html.dark .light-mode-control { display: none; }
 
 /* ===== Text ===== */
 .eyebrow { text-transform: uppercase; letter-spacing: .15em; font-size: .8rem; color: var(--primary); font-weight: 600; }
