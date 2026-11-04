@@ -14,8 +14,9 @@
 
 .friends-circle__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  max-width: 440px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -48,6 +49,13 @@
 .friend-memory-card .father-flip-card__front-copy,
 .friend-memory-card .father-flip-card__back-copy {
   z-index: 2;
+}
+
+@media (max-width: 640px) {
+  .friends-circle__grid {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 440px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
