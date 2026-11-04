@@ -8,6 +8,29 @@
   text-align: center;
 }
 
+.friends-circle__heading .section-title {
+  width: fit-content;
+  margin: 0.4rem auto 0.7rem;
+  color: transparent;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  line-height: 1.15;
+}
+
+.friends-circle__heading .section-title::after {
+  display: block;
+  width: 3.5rem;
+  height: 0.2rem;
+  margin: 0.65rem auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  content: "";
+}
+
 .friends-circle__heading .lead {
   margin: 0.75rem auto 0;
 }

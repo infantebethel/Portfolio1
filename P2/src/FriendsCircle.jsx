@@ -76,7 +76,7 @@ const FriendsCircle = () => (
   <section className="friends-circle">
     <header className="friends-circle__heading">
       <p className="eyebrow">Friends</p>
-  <h2 className="section-title">MY CIRCLE OF FRIENDS</h2>
+  <h2 className="section-title">MY FRIENDS</h2>
       <p className="lead">Good times are even better with the people who make every memory brighter.</p>
     </header>
     <div className="friends-circle__grid">
