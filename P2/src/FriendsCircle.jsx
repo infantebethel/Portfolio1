@@ -5,6 +5,8 @@ import './FriendsCircle.css';
 const birthdayPhoto = new URL('../friends-birthday.jpg', import.meta.url).href;
 const nightPhoto = new URL('../friends-night.jpg', import.meta.url).href;
 const trioPhoto = new URL('../friends-trio.jpg', import.meta.url).href;
+const baguioFriendsPhoto = new URL('../friends-baguio-1.jpg', import.meta.url).href;
+const baguioFriendsPhotoAlt = new URL('../friends-baguio-2.jpg', import.meta.url).href;
 
 const FriendFlipCard = ({ frontPhoto, backPhoto, alt, message, backLabel, frontLabel = 'MY CIRCLE', backEyebrow = 'FRIENDS', backTitle = 'My circle of friends' }) => {
   const [flipped, setFlipped] = useState(false);
@@ -94,8 +96,17 @@ const FriendsCircle = () => (
         message="This is my trio of friends from Luciano Millan National High School (LMNHS) in Asingan, Pangasinan. I met them in Grade 10, after my father transferred me to LMNHS."
         backLabel="my trio of friends"
         frontLabel="MY TRIO"
-        backEyebrow="MY TRIO"
         backTitle="MY TRIO"
+      />
+      <FriendFlipCard
+        frontPhoto={baguioFriendsPhoto}
+        backPhoto={baguioFriendsPhotoAlt}
+        alt="Two friends posing together in Baguio City"
+        message="These are some of my friends in Baguio City. I’m thankful for the fun moments and memories we share."
+        backLabel="my friends in Baguio City"
+        frontLabel="BAGUIO CITY"
+        backEyebrow="MY CLASSMATES AND ALSO FRIENDS"
+        backTitle="My friends in Baguio City"
       />
     </div>
   </section>
