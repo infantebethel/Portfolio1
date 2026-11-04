@@ -60,7 +60,7 @@ const FriendFlipCard = () => {
               <span className="father-flip-card__back-copy">
                 <span className="father-flip-card__eyebrow">FRIENDS</span>
                 <span className="father-flip-card__role">My circle of friends</span>
-                <span className="father-flip-card__message">My friends since Grade 8, they make me happy and support me through everything. Even though we've grown and changed, some of them left our friend group, i miss them.</span>
+                <span className="father-flip-card__message">My friends have been by my side since Grade 8, making me happy and supporting me through everything. Even though we have grown and changed, some have left our friend group, and I miss them.</span>
                 <span className="father-flip-card__hint">Click or press Enter to see the birthday photo</span>
               </span>
             </span>
