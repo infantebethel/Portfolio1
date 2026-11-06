@@ -18,9 +18,10 @@
   <link rel="stylesheet" href="styles.css" />
   <script type="module" src="./script.js"></script>
   <script type="module" src="./src/lanyard-entry.jsx"></script>
+  <script type="module" src="./src/background-entry.jsx"></script>
 </head>
-<body>
-  <div class="aurora"><span></span><span></span><span></span></div>
+<body class="homepage-page">
+  <div id="faulty-terminal-root" aria-hidden="true"></div>
   <header class="header glass">
     <a class="logo" href="index.html"><span class="logo-badge"><img src="profile-logo.png" alt="Profile picture" /></span> Magpali, Wintonia Nazarene M.</a>
     <nav class="nav">
@@ -28,6 +29,7 @@
       <a href="personal.html">Personal Information</a>
       <a href="achievements.html">Achievements</a>
       <a href="parents.html">Family &amp; Friends</a>
+      <a href="surprise.html">Surprise</a>
     </nav>
     <div class="controls">
       <div class="palette">
@@ -96,11 +98,6 @@
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16.6 3c.3 2.1 1.5 3.4 3.5 3.5v3.2a8.6 8.6 0 0 1-3.5-.9v6.5a6.1 6.1 0 1 1-6.1-6.1c.4 0 .8 0 1.2.1v3.4a2.8 2.8 0 1 0 1.7 2.6V3h3.2Z"></path></svg>
         </a>
       </nav>
-    </section>
-    <section class="stats">
-      <div class="stat glass lift reveal"><strong>5</strong><span>Recognitions</span></div>
-      <div class="stat glass lift reveal" style="--delay:.1s"><strong>5</strong><span>Activities</span></div>
-      <div class="stat glass lift reveal" style="--delay:.2s"><strong>∞</strong><span>Things left to learn</span></div>
     </section>
     <div class="marquee"><div class="marquee-track">
       <span>Leadership</span><span>Public speaking</span><span>Teamwork</span><span>Creativity</span><span>Problem solving</span><span>Time management</span>

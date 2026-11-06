@@ -14,7 +14,8 @@ export default defineConfig({
         index: resolve(root, 'index.html'),
         personal: resolve(root, 'personal.html'),
         achievements: resolve(root, 'achievements.html'),
-        parents: resolve(root, 'parents.html')
+        parents: resolve(root, 'parents.html'),
+        surprise: resolve(root, 'surprise.html')
       }
     }
   }

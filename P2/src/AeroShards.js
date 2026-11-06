@@ -183,7 +183,7 @@ function initCanvasAeroShards() {
 export function initAeroShards() {
   const host = document.querySelector('.aurora');
   if (!host) return undefined;
-  if (typeof navigator === 'undefined' || !navigator.gpu) {
+  if (typeof navigator === 'undefined' || !navigator.gpu || /Windows/i.test(navigator.userAgent)) {
     return initCanvasAeroShards();
   }
 
@@ -246,12 +246,27 @@ export function initAeroShards() {
   let createElement;
   let createRoot;
   let AeroShards;
-  Promise.all([
-    import('react'),
-    import('react-dom/client'),
-    import('./ReactBitsAeroShards.jsx')
+  let adapterTimeout;
+  Promise.race([
+    navigator.gpu.requestAdapter(),
+    new Promise(resolve => {
+      adapterTimeout = window.setTimeout(() => resolve(null), 1500);
+    })
   ])
+    .then(function (adapter) {
+      window.clearTimeout(adapterTimeout);
+      if (!adapter) {
+        useFallback(new Error('WebGPU adapter did not respond; using the canvas fallback.'));
+        return null;
+      }
+      return Promise.all([
+        import('react'),
+        import('react-dom/client'),
+        import('./ReactBitsAeroShards.jsx')
+      ]);
+    })
     .then(function (modules) {
+      if (!modules) return;
       if (disposed) return;
       createElement = modules[0].createElement;
       createRoot = modules[1].createRoot;
@@ -262,7 +277,10 @@ export function initAeroShards() {
       observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class', 'style'] });
       render();
     })
-    .catch(useFallback);
+    .catch(function (error) {
+      window.clearTimeout(adapterTimeout);
+      useFallback(error);
+    });
 
   return function cleanup() {
     disposed = true;

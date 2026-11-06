@@ -1,5 +1,3 @@
-import { initAeroShards } from './src/AeroShards.js';
-
 // Small helper for the theme buttons and scroll animations (HTML/CSS can't remember choices alone).
 (function () {
   var html = document.documentElement;
@@ -39,7 +37,61 @@ import { initAeroShards } from './src/AeroShards.js';
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    initAeroShards();
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('[data-profile-effect]').forEach(function (card) {
+        card.addEventListener('pointermove', function (event) {
+          if (event.pointerType === 'touch') return;
+          var bounds = card.getBoundingClientRect();
+          var x = (event.clientX - bounds.left) / bounds.width;
+          var y = (event.clientY - bounds.top) / bounds.height;
+          card.style.setProperty('--profile-pointer-x', (x * 100) + '%');
+          card.style.setProperty('--profile-pointer-y', (y * 100) + '%');
+          card.style.setProperty('--profile-tilt-x', ((0.5 - y) * 8) + 'deg');
+          card.style.setProperty('--profile-tilt-y', ((x - 0.5) * 10) + 'deg');
+          card.classList.add('is-profile-active');
+        });
+        card.addEventListener('pointerleave', function () {
+          card.style.setProperty('--profile-pointer-x', '50%');
+          card.style.setProperty('--profile-pointer-y', '50%');
+          card.style.setProperty('--profile-tilt-x', '0deg');
+          card.style.setProperty('--profile-tilt-y', '0deg');
+          card.classList.remove('is-profile-active');
+        });
+      });
+    }
+
+    var carousel = document.querySelector('[data-personal-carousel]');
+    if (carousel) {
+      var slides = Array.from(carousel.querySelectorAll('[data-carousel-slide]'));
+      var slideTitles = slides.map(function (slide) { return slide.getAttribute('aria-label'); });
+      var status = carousel.querySelector('.personal-carousel-status');
+      var previousButton = carousel.querySelector('[data-carousel-previous]');
+      var nextButton = carousel.querySelector('[data-carousel-next]');
+      var achievementsLink = carousel.querySelector('[data-carousel-achievements]');
+      var currentSlide = 0;
+
+      function showSlide(index) {
+        currentSlide = (index + slides.length) % slides.length;
+        previousButton.hidden = currentSlide === 0;
+        var isLastSlide = currentSlide === slides.length - 1;
+        nextButton.hidden = isLastSlide;
+        achievementsLink.hidden = !isLastSlide;
+        slides.forEach(function (slide, slideIndex) {
+          slide.hidden = slideIndex !== currentSlide;
+          slide.setAttribute('aria-roledescription', 'slide');
+          slide.setAttribute('aria-label', (slideIndex + 1) + ' of ' + slides.length + ': ' + slideTitles[slideIndex]);
+        });
+        status.textContent = (currentSlide + 1) + ' of ' + slides.length + ' · ' + slideTitles[currentSlide];
+      }
+
+      previousButton.addEventListener('click', function () {
+        showSlide(currentSlide - 1);
+      });
+      nextButton.addEventListener('click', function () {
+        showSlide(currentSlide + 1);
+      });
+      showSlide(currentSlide);
+    }
 
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       var cursorGlow = document.createElement('div');

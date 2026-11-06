@@ -12,7 +12,7 @@
   --tilt-x: 0deg;
   --tilt-y: 0deg;
   position: relative;
-  width: min(340px, 100%);
+  width: min(380px, 100%);
   padding: 9px;
   overflow: hidden;
   border: 1px solid oklch(1 0 0 / 0.2);
@@ -90,8 +90,9 @@
 
 .personal-profile-card__identity h2 {
   margin: 0.35rem 0 0;
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   line-height: 1.15;
+  white-space: nowrap;
 }
 
 .personal-profile-card__identity p {

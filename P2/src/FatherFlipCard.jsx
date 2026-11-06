@@ -22,7 +22,7 @@ const FatherFlipCard = () => {
             <img src={familyPhoto} alt="Mr. Magpali celebrating with his family" />
             <span className="father-flip-card__scrim" />
             <span className="father-flip-card__front-copy">
-              <span className="father-flip-card__eyebrow">FAMILY</span>
+              <span className="father-flip-card__eyebrow">FATHER</span>
               <span className="father-flip-card__name">Mr. Magpali</span>
               <span className="father-flip-card__hint">Click or press Enter to flip</span>
             </span>

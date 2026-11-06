@@ -14,9 +14,9 @@ if (root) {
       orientation="portrait"
       finish="glossy"
       cornerRadius={0.3}
-      size={0.66}
+      size={0.48}
       anchor="center"
-      strapLength={0.7}
+      strapLength={0.5}
       strapColor="#080808"
       strapWidth={0.65}
       metal="silver"
@@ -27,7 +27,7 @@ if (root) {
       interactive
       dragAnywhere={root.hasAttribute('data-drag-anywhere')}
       extendAbove={root.hasAttribute('data-extend-above')}
-      intro={false}
+      intro
       className="profile-lanyard"
     />
   );

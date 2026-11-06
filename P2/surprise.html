@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Surprise | Magpali, Wintonia Nazarene M.</title>
+  <meta name="description" content="A little surprise from Wintonia Magpali." />
+  <link rel="canonical" href="https://www.magpaliwintonia.devs.surf/surprise.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Wintonia Magpali Portfolio" />
+  <meta property="og:title" content="A Little Surprise | Wintonia Magpali" />
+  <meta property="og:description" content="A little surprise from Wintonia Magpali." />
+  <meta property="og:url" content="https://www.magpaliwintonia.devs.surf/surprise.html" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="./script.js"></script>
+  <script type="module" src="./src/background-entry.jsx"></script>
+</head>
+<body class="surprise-page">
+  <div id="faulty-terminal-root" aria-hidden="true"></div>
+  <header class="header glass">
+    <a class="logo" href="index.html"><span class="logo-badge"><img src="profile-logo.png" alt="" /></span> Magpali, Wintonia Nazarene M.</a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="personal.html">Personal Information</a>
+      <a href="achievements.html">Achievements</a>
+      <a href="parents.html">Family &amp; Friends</a>
+      <a href="surprise.html" class="active" aria-current="page">Surprise</a>
+    </nav>
+    <div class="controls">
+      <div class="palette">
+        <button class="icon-btn" id="paletteBtn" aria-label="Change colour">
+          <svg class="theme-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 3a9 9 0 1 0 0 18h1.2a2 2 0 0 0 1.4-3.4 1.5 1.5 0 0 1 1.1-2.6H18a3 3 0 0 0 3-3c0-5-4-9-9-9Z"></path>
+            <circle cx="7.5" cy="10" r=".8"></circle><circle cx="11" cy="7" r=".8"></circle>
+            <circle cx="15.5" cy="8" r=".8"></circle>
+          </svg>
+        </button>
+        <div class="palette-menu glass" id="paletteMenu">
+          <p>Accent colour</p>
+          <div class="swatches">
+            <button data-hue="290" style="--h:290" title="Violet"></button>
+            <button data-hue="0" style="--h:0" title="Rose"></button>
+            <button data-hue="45" style="--h:45" title="Sunset"></button>
+            <button data-hue="130" style="--h:130" title="Lime"></button>
+            <button data-hue="250" style="--h:250" title="Ocean"></button>
+            <button data-hue="190" style="--h:190" title="Aqua"></button>
+          </div>
+          <input type="range" id="hueSlider" min="0" max="360" value="290" aria-label="Custom colour" />
+          <div class="light-mode-control">
+            <label class="light-mode-control__label" for="lightModeToneSlider">
+              <span>Light mode tone</span>
+              <output id="lightModeToneValue" for="lightModeToneSlider">18%</output>
+            </label>
+            <input type="range" id="lightModeToneSlider" min="0" max="40" value="18" aria-label="Light mode tone" />
+          </div>
+        </div>
+      </div>
+      <button class="icon-btn" id="modeBtn" type="button" aria-label="Switch to light mode">
+        <svg class="theme-icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+        </svg>
+        <svg class="theme-icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+  <main class="page-enter">
+    <section class="surprise-card glass">
+      <p class="eyebrow">A little something for you</p>
+      <h1 class="title text-gradient">Surprise!</h1>
+      <p class="lead">Thanks for visiting my portfolio.</p>
+      <p class="surprise-coming-soon">COMING SOON</p>
+    </section>
+  </main>
+  <footer class="footer">Made by Magpali, Wintonia Nazarene M. · Philippines</footer>
+</body>
+</html>
