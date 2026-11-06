@@ -9,6 +9,7 @@ export default defineConfig({
   base: './',
   plugins: [react()],
   build: {
+    chunkSizeWarningLimit: 600,
     rollupOptions: {
       input: {
         index: resolve(root, 'index.html'),
@@ -16,6 +17,18 @@ export default defineConfig({
         achievements: resolve(root, 'achievements.html'),
         parents: resolve(root, 'parents.html'),
         surprise: resolve(root, 'surprise.html')
+      },
+      output: {
+        manualChunks(id) {
+          if (id.includes('/node_modules/three/')) return 'three-vendor';
+          if (
+            id.includes('/node_modules/react/') ||
+            id.includes('/node_modules/react-dom/') ||
+            id.includes('/node_modules/scheduler/')
+          ) {
+            return 'react-vendor';
+          }
+        }
       }
     }
   }
