@@ -1,37 +1,28 @@
 import { createRoot } from 'react-dom/client';
-import FaultyTerminal from './FaultyTerminal.jsx';
+import LiquidEther from './LiquidEther.jsx';
 
-const root = document.getElementById('faulty-terminal-root');
+const root = document.getElementById('liquid-ether-root');
 
 if (!root) {
-  throw new Error('The Faulty Terminal background mount is missing.');
+  throw new Error('The Liquid Ether background mount is missing.');
 }
 
 createRoot(root).render(
-  <FaultyTerminal
-    className="faulty-terminal-background"
-    tint="#a855f7"
-    glyphs="characters"
-    scale={2.2}
-    digitSize={1.3}
-    timeScale={0.35}
-    brightness={0.85}
-    glow={0.7}
-    persistence={0.85}
-    mouseStrength={0.5}
-    mouseGlow={0.8}
-    curvature={0.1}
-    vignette={0.25}
-    clickEffect="glitch"
-    scramble={0.5}
-    scanlineIntensity={0.5}
-    glitchAmount={1}
-    flickerAmount={1}
-    noiseAmp={1}
-    chromaticAberration={0}
-    mouseReact
-    pageLoadAnimation
-    pause={false}
+  <LiquidEther
+    className="liquid-ether-background"
+    colors={['#a855f7', '#FF9FFC', '#B497CF']}
+    mouseForce={20}
+    cursorSize={100}
+    persistence={0.75}
+    autoDemo
+    autoSpeed={0.5}
+    autoIntensity={2.2}
+    intensity={1}
+    viscosity={0}
+    resolution={0.5}
+    clickBurst
+    bounceEdges={false}
+    intro
     lightMode={false}
   />
 );
