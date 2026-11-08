@@ -30,8 +30,8 @@ The GitHub Pages address is `https://infantebethel.github.io/Portfolio1/`.
 
 The custom domain is `www.infantebethel.devs.surf`, managed through Devs.Surf.
 The `www` CNAME record points to `infantebethel.github.io`. GitHub Pages
-has the domain configured, DNS verified, and HTTPS enforced in the repository's
-**Settings → Pages**.
+has the domain configured and DNS verified in **Settings → Pages**. HTTPS
+enforcement becomes available after GitHub issues a certificate for the domain.
 
 ## Search engine indexing
 
