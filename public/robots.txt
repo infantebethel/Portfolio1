@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://infantebethel.devs.surf/sitemap.xml
+Sitemap: https://www.infantebethel.devs.surf/sitemap.xml
