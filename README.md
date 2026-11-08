@@ -30,5 +30,18 @@ The GitHub Pages address is `https://infantebethel.github.io/Portfolio1/`.
 
 The custom domain is `infantebethel.devs.surf`, managed through Devs.Surf.
 The domain's CNAME record points to `infantebethel.github.io`. GitHub Pages
-will provision HTTPS after the DNS change propagates and the domain is
-verified in the repository's **Settings → Pages**.
+has the domain configured, DNS verified, and HTTPS enforced in the repository's
+**Settings → Pages**.
+
+## Search engine indexing
+
+The site includes a canonical URL, descriptive metadata, Person structured
+data, `robots.txt`, and an XML sitemap. These help search engines discover
+and understand the site but do not guarantee when or whether it appears in
+search results.
+
+To request indexing, add `https://infantebethel.devs.surf/` as a URL-prefix
+property in [Google Search Console](https://search.google.com/search-console),
+complete Google's ownership verification, submit
+`https://infantebethel.devs.surf/sitemap.xml`, and use **URL inspection →
+Request indexing** for the homepage.
