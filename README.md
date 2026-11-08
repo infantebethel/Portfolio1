@@ -28,7 +28,7 @@ Actions** as the deployment source.
 
 The GitHub Pages address is `https://infantebethel.github.io/Portfolio1/`.
 
-The site is configured for `www.infantebethel.devs.surf`. Add a CNAME record
-for `www` pointing to `infantebethel.github.io` with your DNS provider, then
-add the same custom domain in the repository's **Settings → Pages** and wait
-for DNS verification and HTTPS provisioning.
+The custom domain is `infantebethel.devs.surf`, managed through Devs.Surf.
+The domain's CNAME record points to `infantebethel.github.io`. GitHub Pages
+will provision HTTPS after the DNS change propagates and the domain is
+verified in the repository's **Settings → Pages**.
