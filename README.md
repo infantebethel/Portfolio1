@@ -26,6 +26,8 @@ The repository's default branch is deployed automatically by the GitHub
 Actions workflow. In the repository settings, enable **Pages** with **GitHub
 Actions** as the deployment source.
 
+The GitHub Pages address is `https://infantebethel.github.io/Portfolio1/`.
+
 The site is configured for `www.infantebethel.devs.surf`. Add a CNAME record
 for `www` pointing to `infantebethel.github.io` with your DNS provider, then
 add the same custom domain in the repository's **Settings → Pages** and wait
